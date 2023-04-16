@@ -1,0 +1,14 @@
+# Syntax Coloring Map For HX711_light library
+
+# Datatypes
+HX711_light KEYWORD1
+
+# Methods and Functions
+dataReady KEYWORD2
+getData KEYWORD2
+setChannelAndGain KEYWORD2
+
+# Constants
+CH_A_128 LITERAL1
+CH_A_64 LITERAL1
+CH_B_32 LITERAL1

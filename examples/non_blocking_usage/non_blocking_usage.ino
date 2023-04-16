@@ -13,8 +13,9 @@ void setup() {
 }
 
 void loop() {
-  // Read data and print over Serial.
-  // getData() will block until data is available.
-  long hx_data = HX711.getData();
-  Serial.println(hx_data);
+  // Only read data when it is already available.
+  if (HX711.dataReady()) {
+    long hx_data = HX711.getData();
+    Serial.println(hx_data);
+  }
 }

@@ -1,17 +1,19 @@
 #include "Arduino.h"
 
-#ifndef _HX711_LEAN_H
-#define _HX711_LEAN_H
+#ifndef _HX711_LIGHT_H
+#define _HX711_LIGHT_H
 
-class HX711_lean {
+class HX711_light {
 public:
+  // Channel and gain settings.
   enum Settings {
     CH_A_128 = 0,
     CH_A_64,
     CH_B_32
   };
-  HX711_lean(uint8_t dat_pin, uint8_t clk_pin);
+  HX711_light(uint8_t dat_pin, uint8_t clk_pin);
   void begin();
+  bool dataReady();
   int32_t getData();
   void setChannelAndGain(Settings settings);
 
@@ -21,4 +23,4 @@ private:
   Settings settings_ = 0;
 };
 
-#endif // _HX711_LEAN_H
+#endif  // _HX711_LIGHT_H
