@@ -15,7 +15,7 @@ void setup() {
 void loop() {
   // Only read data when it is already available.
   if (HX711.dataReady()) {
-    long hx_data = HX711.getData();
+    long hx_data = HX711.readData();
     Serial.println(hx_data);
   }
 }

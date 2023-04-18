@@ -16,7 +16,7 @@ bool HX711_light::dataReady(){
   return !digitalRead(dat_pin_);
 }
 
-int32_t HX711_light::getData() {
+int32_t HX711_light::readData() {
   // Wait for data to be available.	
   while (!dataReady());
   int32_t result = 0;
@@ -52,7 +52,17 @@ int32_t HX711_light::getData() {
   return result;
 }
 
+int32_t HX711_light::data(){
+  return data_;
+}
+
+void HX711_light::update() {
+  if(dataReady()){
+    data_ = readData();
+  }
+}
+
 void HX711_light::setChannelAndGain(Settings settings) {
   settings_ = settings;
-  getData();
+  readData();
 }

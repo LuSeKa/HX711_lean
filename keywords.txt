@@ -5,7 +5,8 @@ HX711_light KEYWORD1
 
 # Methods and Functions
 dataReady KEYWORD2
-getData KEYWORD2
+readData KEYWORD2
+update KEYWORD2
 setChannelAndGain KEYWORD2
 
 # Constants
