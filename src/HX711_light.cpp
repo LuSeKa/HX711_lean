@@ -1,3 +1,4 @@
+#include "Arduino.h"
 #include "HX711_light.h"
 
 HX711_light::HX711_light(uint8_t dat_pin, uint8_t clk_pin) {
@@ -10,6 +11,9 @@ void HX711_light::begin() {
   pinMode(dat_pin_, INPUT);   // Data is input to the Arduino.
   pinMode(clk_pin_, OUTPUT);  // Clock is output from the Arduino.
   digitalWrite(clk_pin_, LOW);
+  // Perform a dummy read to ensure the desired settings are set
+  // from the first data acquisition on.
+  readData();
 }
 
 bool HX711_light::dataReady(){

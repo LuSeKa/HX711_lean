@@ -1,5 +1,3 @@
-#include "Arduino.h"
-
 #ifndef _HX711_LIGHT_H
 #define _HX711_LIGHT_H
 
